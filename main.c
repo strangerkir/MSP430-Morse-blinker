@@ -44,7 +44,6 @@ void setUpTimer(unsigned short clockSourceDivider) {
     initParam.clockSourceDivider = clockSourceDivider;
     initParam.timerPeriod = 0x0FFFF;
     initParam.captureCompareInterruptEnable_CCR0_CCIE = TIMER_A_CCIE_CCR0_INTERRUPT_ENABLE;
-    //initParam.timerInterruptEnable_TAIE = TIMER_A_TAIE_INTERRUPT_ENABLE;
     initParam.timerClear = TIMER_A_DO_CLEAR;
     initParam.startTimer = false;
 

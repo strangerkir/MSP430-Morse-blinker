@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker Unix v21.6.1                   
 ******************************************************************************
->> Linked Sat Jun 14 20:32:09 2025
+>> Linked Sat Jun 14 20:59:27 2025
 
 OUTPUT FILE NAME:   <Morse blinker.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00004400
@@ -85,7 +85,7 @@ MEMORY CONFIGURATION
   INT61                 0000fffa   00000002  00000002  00000000  RWIX
   INT62                 0000fffc   00000002  00000002  00000000  RWIX
   RESET                 0000fffe   00000002  00000002  00000000  RWIX
-  FLASH2                00010000   000143f8  00000170  00014288  RWIX
+  FLASH2                00010000   000143f8  00000174  00014284  RWIX
 
 
 SECTION ALLOCATION MAP
@@ -190,27 +190,27 @@ SYSNMI     0    0000fffc    00000002
 .reset     0    0000fffe    00000002     
                   0000fffe    00000002     rts430x_lc_rd_eabi.lib : boot.c.obj (.reset)
 
-.text      0    00010000    00000170     
+.text      0    00010000    00000174     
                   00010000    0000007c     timer_a.obj (.text:Timer_A_initUpMode)
-                  0001007c    00000046     main.obj (.text:setUpTimer)
-                  000100c2    00000028     gpio.obj (.text:GPIO_setAsOutputPin)
-                  000100ea    00000020     wdt_a.obj (.text:WDT_A_hold)
-                  0001010a    00000020     main.obj (.text:main)
-                  0001012a    0000001c     gpio.obj (.text:GPIO_toggleOutputOnPin)
-                  00010146    0000000c     timer_a.obj (.text:Timer_A_startCounter)
-                  00010152    0000000a     timer_a.obj (.text:Timer_A_clearCaptureCompareInterrupt)
-                  0001015c    0000000a     main.obj (.text:setUpLong)
-                  00010166    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
-                  0001016c    00000004                            : pre_init.c.obj (.text:_system_pre_init)
+                  0001007c    0000004a     main.obj (.text:setUpTimer)
+                  000100c6    00000028     gpio.obj (.text:GPIO_setAsOutputPin)
+                  000100ee    00000020     wdt_a.obj (.text:WDT_A_hold)
+                  0001010e    00000020     main.obj (.text:main)
+                  0001012e    0000001c     gpio.obj (.text:GPIO_toggleOutputOnPin)
+                  0001014a    0000000c     timer_a.obj (.text:Timer_A_startCounter)
+                  00010156    0000000a     timer_a.obj (.text:Timer_A_clearCaptureCompareInterrupt)
+                  00010160    0000000a     main.obj (.text:setUpLong)
+                  0001016a    00000006     rts430x_lc_rd_eabi.lib : exit.c.obj (.text:abort)
+                  00010170    00000004                            : pre_init.c.obj (.text:_system_pre_init)
 
 MODULE SUMMARY
 
        Module             code   ro data   rw data
        ------             ----   -------   -------
     ./
-       main.obj           126    2         0      
+       main.obj           130    2         0      
     +--+------------------+------+---------+---------+
-       Total:             126    2         0      
+       Total:             130    2         0      
                                                   
     ./driverlib/MSP430F5xx_6xx/
        timer_a.obj        146    0         0      
@@ -250,7 +250,7 @@ MODULE SUMMARY
                                                   
        Stack:             0      0         160    
     +--+------------------+------+---------+---------+
-       Grand Total:       410    74        160    
+       Grand Total:       414    74        160    
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -339,7 +339,7 @@ address   name
 00000732  ADC12MEM9                           
 00000733  ADC12MEM9_H                         
 00000732  ADC12MEM9_L                         
-00010166  C$$EXIT                             
+0001016a  C$$EXIT                             
 000008c0  CBCTL0                              
 000008c1  CBCTL0_H                            
 000008c0  CBCTL0_L                            
@@ -407,8 +407,8 @@ address   name
 00000146  FCTL4                               
 00000147  FCTL4_H                             
 00000146  FCTL4_L                             
-000100c2  GPIO_setAsOutputPin                 
-0001012a  GPIO_toggleOutputOnPin              
+000100c6  GPIO_setAsOutputPin                 
+0001012e  GPIO_toggleOutputOnPin              
 000004c4  MAC                                 
 000004da  MAC32H                              
 000004db  MAC32H_H                            
@@ -752,9 +752,9 @@ address   name
 000003e0  TB0EX0                              
 000003ee  TB0IV                               
 000003d0  TB0R                                
-00010152  Timer_A_clearCaptureCompareInterrupt
+00010156  Timer_A_clearCaptureCompareInterrupt
 00010000  Timer_A_initUpMode                  
-00010146  Timer_A_startCounter                
+0001014a  Timer_A_startCounter                
 000005d0  UCA0ABCTL                           
 000005c6  UCA0BRW                             
 000005c7  UCA0BRW_H                           
@@ -993,7 +993,7 @@ address   name
 0000015c  WDTCTL                              
 0000015d  WDTCTL_H                            
 0000015c  WDTCTL_L                            
-000100ea  WDT_A_hold                          
+000100ee  WDT_A_hold                          
 00004400  __STACK_END                         
 000000a0  __STACK_SIZE                        
 00004400  __TI_CINIT_Base                     
@@ -1029,11 +1029,11 @@ ffffffff  __c_args__
 00004400  _c_int00_noinit_noargs              
 0000fffe  _reset_vector                       
 00004360  _stack                              
-0001016c  _system_pre_init                    
-00010166  abort                               
-0001010a  main                                
+00010170  _system_pre_init                    
+0001016a  abort                               
+0001010e  main                                
 00004414  myISR_TA0_Other                     
-0001015c  setUpLong                           
+00010160  setUpLong                           
 0001007c  setUpTimer                          
 
 
@@ -1805,16 +1805,16 @@ address   name
 0000fffe  _reset_vector                       
 00010000  Timer_A_initUpMode                  
 0001007c  setUpTimer                          
-000100c2  GPIO_setAsOutputPin                 
-000100ea  WDT_A_hold                          
-0001010a  main                                
-0001012a  GPIO_toggleOutputOnPin              
-00010146  Timer_A_startCounter                
-00010152  Timer_A_clearCaptureCompareInterrupt
-0001015c  setUpLong                           
-00010166  C$$EXIT                             
-00010166  abort                               
-0001016c  _system_pre_init                    
+000100c6  GPIO_setAsOutputPin                 
+000100ee  WDT_A_hold                          
+0001010e  main                                
+0001012e  GPIO_toggleOutputOnPin              
+0001014a  Timer_A_startCounter                
+00010156  Timer_A_clearCaptureCompareInterrupt
+00010160  setUpLong                           
+0001016a  C$$EXIT                             
+0001016a  abort                               
+00010170  _system_pre_init                    
 ffffffff  __TI_pprof_out_hndl                 
 ffffffff  __TI_prof_data_size                 
 ffffffff  __TI_prof_data_start                
