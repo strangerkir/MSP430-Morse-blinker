@@ -1,7 +1,7 @@
 ******************************************************************************
                   MSP430 Linker Unix v21.6.1                   
 ******************************************************************************
->> Linked Sat Jun 14 20:59:27 2025
+>> Linked Sun Jun 22 18:19:38 2025
 
 OUTPUT FILE NAME:   <Morse blinker.out>
 ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00004400
