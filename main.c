@@ -38,6 +38,8 @@
 //!
 //******************************************************************************
 
+typedef void (*FuncPtr)(void);
+
 void setUpTimer(unsigned short clockSourceDivider) {
     Timer_A_initUpModeParam initParam;
     initParam.clockSource = TIMER_A_CLOCKSOURCE_SMCLK;
@@ -57,20 +59,71 @@ void setUpTimer(unsigned short clockSourceDivider) {
 }
 
 void setUpLong(void) {
-    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_32);
+    GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
+    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_4);
 };
 
 void setUpShort(void) {
-    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_16);
+    GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
+    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_2);
 }
 
 void setUpPause (void) {
-    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_32);
+    GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
+    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_4);
+}
+
+ void doShortSpace (void) {
+    // Not nessessary, but just to make sure led is off
+    GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
+    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_2);
+ }
+
+struct Caller {
+    bool needSpace;
+    unsigned short idx;
+    unsigned short size;
+    FuncPtr *fp;
+    FuncPtr space;
+    FuncPtr next;
+
+};
+
+struct Caller caller;
+
+void callNext() {
+
+    if(caller.needSpace) {
+        caller.needSpace = false;
+        caller.space();
+        return;
+    }
+
+    caller.needSpace = true;
+
+    if(caller.idx >= caller.size) {
+        caller.idx = 0;
+    }
+
+    caller.fp[caller.idx]();
+    caller.idx ++;
+
+}
+
+void initializeCaller(FuncPtr fp[], short unsigned size) {
+    caller.needSpace = false;
+    caller.idx = 0;
+    caller.size = size;
+    caller.fp = fp;
+    caller.space = doShortSpace;
+    caller.next = callNext;
 }
 
 #pragma vector = TIMER0_A0_VECTOR
 __interrupt void myISR_TA0_Other(void) {
-    GPIO_toggleOutputOnPin(GPIO_PORT_P1, GPIO_PIN0);
+    GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
+    Timer_A_stop(TIMER_A0_BASE);
+    caller.next();
 }
 
 void main (void)
@@ -78,9 +131,13 @@ void main (void)
     char * text = "Test";
 
     WDT_A_hold(WDT_A_BASE);
+    FuncPtr fp[] = {setUpShort, setUpLong, setUpPause};
     GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);
+    int singleSize = sizeof(fp[0]);
+    short unsigned fpSize = sizeof(fp) / singleSize;
+    initializeCaller(fp, fpSize);
     _enable_interrupt();
-    setUpLong();
+    caller.next();
     while (1) {
         __no_operation();
     }
