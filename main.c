@@ -71,11 +71,6 @@ void setUpShort(void) {
     setUpTimer(TIMER_PERIOD_UNIT);
 }
 
-void setUpPause (void) {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_PERIOD_UNIT * 7);
-}
-
  void doShortSpace (void) {
     // Not nessessary, but just to make sure led is off
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
@@ -134,7 +129,7 @@ void main (void)
     char * text = "Test";
 
     WDT_A_hold(WDT_A_BASE);
-    FuncPtr fp[] = {setUpShort, setUpLong, setUpPause};
+    FuncPtr fp[] = {setUpShort, setUpLong};
     GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);
     int singleSize = sizeof(fp[0]);
     short unsigned fpSize = sizeof(fp) / singleSize;
