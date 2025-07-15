@@ -38,13 +38,16 @@
 //!
 //******************************************************************************
 
+#define ALCLK_FREQUENCY 32768UL
+#define TIMER_PERIOD_UNIT (ALCLK_FREQUENCY * 0.2)
+
 typedef void (*FuncPtr)(void);
 
-void setUpTimer(unsigned short clockSourceDivider) {
+void setUpTimer(unsigned short timerPeriod) {
     Timer_A_initUpModeParam initParam;
     initParam.clockSource = TIMER_A_CLOCKSOURCE_ACLK;
-    initParam.clockSourceDivider = clockSourceDivider;
-    initParam.timerPeriod = 0x0FFFF;
+    initParam.clockSourceDivider = TIMER_A_CLOCKSOURCE_DIVIDER_1;
+    initParam.timerPeriod = timerPeriod;
     initParam.captureCompareInterruptEnable_CCR0_CCIE = TIMER_A_CCIE_CCR0_INTERRUPT_ENABLE;
     initParam.timerInterruptEnable_TAIE = TIMER_A_TAIE_INTERRUPT_DISABLE;
     initParam.timerClear = TIMER_A_DO_CLEAR;
@@ -60,23 +63,23 @@ void setUpTimer(unsigned short clockSourceDivider) {
 
 void setUpLong(void) {
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_4);
+    setUpTimer(TIMER_PERIOD_UNIT * 3);
 };
 
 void setUpShort(void) {
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_2);
+    setUpTimer(TIMER_PERIOD_UNIT);
 }
 
 void setUpPause (void) {
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_4);
+    setUpTimer(TIMER_PERIOD_UNIT * 7);
 }
 
  void doShortSpace (void) {
     // Not nessessary, but just to make sure led is off
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_A_CLOCKSOURCE_DIVIDER_2);
+    setUpTimer(TIMER_PERIOD_UNIT);
  }
 
 struct Caller {
