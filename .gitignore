@@ -1,0 +1,55 @@
+#------------------------------------
+# MSP430 LaunchPad CCS Project .gitignore
+#------------------------------------
+
+# CCS build outputs
+Debug/
+Release/
+*.out
+*.hex
+*.map
+*.bin
+*.elf
+*.d43
+
+# Object files
+*.o
+*.obj
+
+# Dependency files
+*.d
+
+# Listing files
+*.lst
+
+# CCS project settings
+.cproject
+.project
+.settings/
+.metadata/
+
+# CCS debug configurations
+*.ccxml
+*.opt
+*.dbgconf
+*.launch
+
+# Temporary or log files
+*.log
+
+# Workspace-specific files (if inside repo)
+*.wkr
+*.wsn
+*.user
+
+# TI-specific files
+*.paf
+*.r43
+*.xml
+*.sfr
+*.cdtbuild
+*.tmc
+
+# Optional: ignore backup or swap files
+*~
+*.swp

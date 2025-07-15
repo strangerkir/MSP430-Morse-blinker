@@ -42,7 +42,7 @@ typedef void (*FuncPtr)(void);
 
 void setUpTimer(unsigned short clockSourceDivider) {
     Timer_A_initUpModeParam initParam;
-    initParam.clockSource = TIMER_A_CLOCKSOURCE_SMCLK;
+    initParam.clockSource = TIMER_A_CLOCKSOURCE_ACLK;
     initParam.clockSourceDivider = clockSourceDivider;
     initParam.timerPeriod = 0x0FFFF;
     initParam.captureCompareInterruptEnable_CCR0_CCIE = TIMER_A_CCIE_CCR0_INTERRUPT_ENABLE;
