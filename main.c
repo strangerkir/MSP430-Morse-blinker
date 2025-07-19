@@ -61,29 +61,43 @@ void setUpTimer(unsigned short timerPeriod) {
     Timer_A_startCounter(TIMER_A0_BASE, TIMER_A_UP_MODE);
 }
 
-void setUpLong(void) {
+/**
+ * Long signal
+ */
+void dah(void) {
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
     setUpTimer(TIMER_PERIOD_UNIT * 3);
 };
 
-void setUpShort(void) {
+/**
+ * Short signal
+ */
+void dit(void) {
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
     setUpTimer(TIMER_PERIOD_UNIT);
 }
 
-void setUpShortPause(void) {
+/**
+ * Short pause. Used between dits and dahs inside one character
+ */
+void intraCharacterSpace(void) {
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
     setUpTimer(TIMER_PERIOD_UNIT);
 }
 
-void setUpMiddlePause(void) {
+/**
+ * Middle pause. Used between characters inside word.
+ */
+void characterSpace(void) {
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
         setUpTimer(TIMER_PERIOD_UNIT * 3);
 
 }
 
-
-void setUpLongPause(void) {
+/**
+ * Long pause. Used between words.
+ */
+void wordSpace(void) {
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
     setUpTimer(TIMER_PERIOD_UNIT * 7);
 
@@ -129,7 +143,7 @@ void main (void)
     char * text = "Test";
 
     WDT_A_hold(WDT_A_BASE);
-    FuncPtr fp[] = {setUpShort, setUpShortPause, setUpLong, setUpLongPause, setUpShort};
+    FuncPtr fp[] = {dit, intraCharacterSpace, dah, wordSpace, dit, wordSpace};
     GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);
     int singleSize = sizeof(fp[0]);
     short unsigned fpSize = sizeof(fp) / singleSize;
