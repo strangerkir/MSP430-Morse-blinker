@@ -34,4 +34,6 @@ Feel free to fork or modify it as a base for your own experiments.
 
 ## License
 
-[MIT License](LICENSE)
+This project includes code from Texas Instruments under their BSD license (see header comments in source files).
+
+The rest of the project is under [MIT License](LICENSE).
