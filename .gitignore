@@ -29,7 +29,6 @@ Release/
 .metadata/
 
 # CCS debug configurations
-*.ccxml
 *.opt
 *.dbgconf
 *.launch
