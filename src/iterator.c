@@ -38,9 +38,8 @@ void callNext() {
 
 }
 
-void initializeCaller(FuncPtr fp[], short unsigned size) {
+void initializeCaller(FuncPtr fp[]) {
     caller.idx = 0;
-    caller.size = size;
     caller.fp = fp;
     caller.next = callNext;
 }

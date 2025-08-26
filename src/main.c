@@ -45,11 +45,9 @@ void main (void)
 {
 
     WDT_A_hold(WDT_A_BASE);
-    FuncPtr fp[] = {dit, intraCharacterSpace, dah, wordSpace, dit, wordSpace};
+    FuncPtr fp[] = {dit, intraCharacterSpace, dah, wordSpace, dit, wordSpace, 0};
     GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);
-    int singleSize = sizeof(fp[0]);
-    short unsigned fpSize = sizeof(fp) / singleSize;
-    initializeCaller(fp, fpSize);
+    initializeCaller(fp);
     _enable_interrupt();
     caller.next();
     while (1) {
