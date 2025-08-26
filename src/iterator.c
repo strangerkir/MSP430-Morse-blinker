@@ -10,6 +10,7 @@ struct Caller caller;
 
 void getNextChar(struct Caller *caller) {
     caller->fp[0] = dit;
+    caller->fp[1] = 0;
 }
 
 struct CharPattern findCharPattern(unsigned char toFind) {
@@ -27,7 +28,7 @@ struct CharPattern findCharPattern(unsigned char toFind) {
 
 void callNext() {
 
-    if(caller.idx >= caller.size) {
+    if(caller.fp[caller.idx] == 0) {
         getNextChar(&caller);
         caller.idx = 0;
     }
