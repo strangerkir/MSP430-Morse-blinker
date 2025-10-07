@@ -5,12 +5,12 @@ typedef void (*FuncPtr)(void);
 
 struct Caller {
     unsigned short idx;
-    FuncPtr *fp;
+    FuncPtr* fp;
     FuncPtr next;
 
 };
 
-void initializeCaller(FuncPtr fp[]);
+void initializeCaller();
 
 extern struct Caller caller;
 
