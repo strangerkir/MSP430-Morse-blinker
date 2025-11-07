@@ -5,7 +5,7 @@ typedef void (*FuncPtr)(void);
 
 struct Caller {
     unsigned short idx;
-    FuncPtr* fp;
+    const FuncPtr* fp;
     FuncPtr next;
 
 };
