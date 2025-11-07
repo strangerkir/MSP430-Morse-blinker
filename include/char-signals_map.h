@@ -5,7 +5,7 @@
 
 struct CharPattern {
     char ch;
-    FuncPtr fp[7];
+    const FuncPtr* fp; 
 };
 
 
