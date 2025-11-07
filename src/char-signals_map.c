@@ -6,50 +6,97 @@
 #include "signals.h"
 #include "char-signals_map.h"
 
+const FuncPtr sPattern[] = {dit, dit, dit, 0};
+const FuncPtr aPattern[] = {dit, dah, 0};
+const FuncPtr bPattern[] = {dah, dit, dit, dit, 0};
+const FuncPtr cPattern[] = {dah, dit, dah, dit, 0};
+const FuncPtr dPattern[] = {dah, dit, dit, 0};
+const FuncPtr ePattern[] = {dit, 0};
+const FuncPtr fPattern[] = {dit, dit, dah, dit, 0};
+const FuncPtr gPattern[] = {dah, dah, dit, 0};
+const FuncPtr hPattern[] = {dit, dit, dit, dit, 0};
+const FuncPtr iPattern[] = {dit, dit, 0};
+const FuncPtr jPattern[] = {dit, dah, dah, dah, 0};
+const FuncPtr kPattern[] = {dah, dit, dah, 0};
+const FuncPtr lPattern[] = {dit, dah, dit, dit, 0};
+const FuncPtr mPattern[] = {dah, dah, 0};
+const FuncPtr nPattern[] = {dah, dit, 0};
+const FuncPtr oPattern[] = {dah, dah, dah, 0};
+const FuncPtr pPattern[] = {dit, dah, dah, dit, 0};
+const FuncPtr qPattern[] = {dah, dah, dit, dah, 0};
+const FuncPtr rPattern[] = {dit, dah, dit, 0};
+const FuncPtr tPattern[] = {dah, 0};
+const FuncPtr uPattern[] = {dit, dit, dah, 0};
+const FuncPtr vPattern[] = {dit, dit, dit, dah, 0};
+const FuncPtr wPattern[] = {dit, dah, dah, 0};
+const FuncPtr xPattern[] = {dah, dit, dit, dah, 0};
+const FuncPtr yPattern[] = {dah, dit, dah, dah, 0};
+const FuncPtr zPattern[] = {dah, dah, dit, dit, 0};
+
+const FuncPtr onePattern[] = {dit, dah, dah, dah, dah, 0};
+const FuncPtr twoPattern[] = {dit, dit, dah, dah, dah, 0};
+const FuncPtr threePattern[] = {dit, dit, dit, dah, dah, 0};
+const FuncPtr fourPattern[] = {dit, dit, dit, dit, dah, 0};
+const FuncPtr fivePattern[] = {dit, dit, dit, dit, dit, 0};
+const FuncPtr sixPattern[] = {dah, dit, dit, dit, dit, 0};
+const FuncPtr sevenPattern[] = {dah, dah, dit, dit, dit, 0};
+const FuncPtr eightPattern[] = {dah, dah, dah, dit, dit, 0};
+const FuncPtr ninePattern[] = {dah, dah, dah, dah, dit, 0};
+const FuncPtr zeroPattern[] = {dah, dah, dah, dah, dah, 0};
+
+const FuncPtr dotPattern[] = {dit, dah, dit, dah, dit, dah, 0};
+const FuncPtr commaPattern[] = {dah, dah, dit, dit, dah, dah, 0};
+const FuncPtr dashPattern[] = {dah, dit, dit, dit, dit, dah, 0};
+const FuncPtr questionPattern[] = {dit, dit, dah, dah, dit, dit, 0};
+const FuncPtr exclamationPattern[] = {dah, dit, dah, dit, dah, dah, 0};
+const FuncPtr endPattern[] = {0};
+
+
+
 struct CharPattern charMap[] = {
-    {'A', {dit, dah, 0}},
-    {'B', {dah, dit, dit, dit, 0}},
-    {'C', {dah, dit, dah, dit, 0}},
-    {'D', {dah, dit, dit, 0}},
-    {'E', {dit, 0}},
-    {'F', {dit, dit, dah, dit, 0}},
-    {'G', {dah, dah, dit, 0}},
-    {'H', {dit, dit, dit, dit, 0}},
-    {'I', {dit, dit, 0}},
-    {'J', {dit, dah, dah, dah, 0}},
-    {'K', {dah, dit, dah, 0}},
-    {'L', {dit, dah, dit, dit, 0}},
-    {'M', {dah, dah, 0}},
-    {'N', {dah, dit, 0}},
-    {'O', {dah, dah, dah, 0}},
-    {'P', {dit, dah, dah, dit, 0}},
-    {'Q', {dah, dah, dit, dah, 0}},
-    {'R', {dit, dah, dit, 0}},
-    {'S', {dit, dit, dit, 0}},
-    {'T', {dah, 0}},
-    {'U', {dit, dit, dah, 0}},
-    {'V', {dit, dit, dit, dah, 0}},
-    {'W', {dit, dah, dah, 0}},
-    {'X', {dah, dit, dit, dah, 0}},
-    {'Y', {dah, dit, dah, dah, 0}},
-    {'Z', {dah, dah, dit, dit, 0}},
+    {'A', aPattern},
+    {'B', bPattern},
+    {'C', cPattern},
+    {'D', dPattern},
+    {'E', ePattern},
+    {'F', fPattern},
+    {'G', gPattern},
+    {'H', hPattern},
+    {'I', iPattern},
+    {'J', jPattern},
+    {'K', kPattern},
+    {'L', lPattern},
+    {'M', mPattern},
+    {'N', nPattern},
+    {'O', oPattern},
+    {'P', pPattern},
+    {'Q', qPattern},
+    {'R', rPattern},
+    {'S', sPattern},
+    {'T', tPattern},
+    {'U', uPattern},
+    {'V', vPattern},
+    {'W', wPattern},
+    {'X', xPattern},
+    {'Y', yPattern},
+    {'Z', zPattern},
 
-    {'1', {dit, dah, dah, dah, dah, 0}},
-    {'2', {dit, dit, dah, dah, dah, 0}},
-    {'3', {dit, dit, dit, dah, dah, 0}},
-    {'4', {dit, dit, dit, dit, dah, 0}},
-    {'5', {dit, dit, dit, dit, dit, 0}},
-    {'6', {dah, dit, dit, dit, dit, 0}},
-    {'7', {dah, dah, dit, dit, dit, 0}},
-    {'8', {dah, dah, dah, dit, dit, 0}},
-    {'9', {dah, dah, dah, dah, dit, 0}},
-    {'0', {dah, dah, dah, dah, dah, 0}},
+    {'1', onePattern},
+    {'2', twoPattern},
+    {'3', threePattern},
+    {'4', fourPattern},
+    {'5', fivePattern},
+    {'6', sixPattern},
+    {'7', sevenPattern},
+    {'8', eightPattern},
+    {'9', ninePattern},
+    {'0', zeroPattern},
 
-    {'.', {dit, dah, dit, dah, dit, dah, 0}},
-    {',', {dah, dah, dit, dit, dah, dah, 0}},
-    {'-', {dah, dit, dit, dit, dit, dah, 0}},
-    {'?', {dit, dit, dah, dah, dit, dit, 0}},
-    {'!', {dah, dit, dah, dit, dah, dah, 0}},
-    {'\0', {0}},
+    {'.', dotPattern},
+    {',', commaPattern},
+    {'-', dashPattern},
+    {'?', questionPattern},
+    {'!', exclamationPattern},
+    {'\0', endPattern},
 };
 
