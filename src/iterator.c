@@ -30,6 +30,7 @@ void callNext() {
     struct CharPattern* nextCharPattern;
     if(*(caller.fp) == 0) {
         char nextChar = getNextChar(&caller);
+        nextChar = toUpper(nextChar);
         if(nextChar == '\0') {
             //End of the text.
             return;
@@ -47,4 +48,12 @@ void initializeCaller() {
     caller.idx = 0;
     caller.fp = emptyPattern;
     caller.next = callNext;
+}
+
+static inline char toUpper(char c) {
+    if (c >= 'a' && c <='z') {
+        return c - ('a' - 'A');
+    }
+
+    return c;
 }
