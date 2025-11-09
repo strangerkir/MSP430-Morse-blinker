@@ -49,6 +49,7 @@ const FuncPtr commaPattern[] = {dah, dah, dit, dit, dah, dah, 0};
 const FuncPtr dashPattern[] = {dah, dit, dit, dit, dit, dah, 0};
 const FuncPtr questionPattern[] = {dit, dit, dah, dah, dit, dit, 0};
 const FuncPtr exclamationPattern[] = {dah, dit, dah, dit, dah, dah, 0};
+const FuncPtr spacePattern[] = {wordSpace, 0};
 const FuncPtr emptyPattern[] = {0};
 
 
@@ -80,6 +81,7 @@ struct CharPattern charMap[] = {
     {'X', xPattern},
     {'Y', yPattern},
     {'Z', zPattern},
+    {' ', spacePattern},
 
     {'1', onePattern},
     {'2', twoPattern},
