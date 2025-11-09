@@ -11,4 +11,6 @@ struct CharPattern {
 
 extern struct CharPattern charMap[];
 
+extern const FuncPtr emptyPattern[];
+
 #endif

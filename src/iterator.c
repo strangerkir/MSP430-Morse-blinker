@@ -28,7 +28,7 @@ struct CharPattern* findCharPattern(unsigned char toFind) {
 
 void callNext() {
     struct CharPattern* nextCharPattern;
-    if(caller.fp == 0) {
+    if(*(caller.fp) == 0) {
         char nextChar = getNextChar(&caller);
         if(nextChar == '\0') {
             //End of the text.
@@ -45,6 +45,6 @@ void callNext() {
 
 void initializeCaller() {
     caller.idx = 0;
-    caller.fp = 0;
+    caller.fp = emptyPattern;
     caller.next = callNext;
 }
