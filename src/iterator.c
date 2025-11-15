@@ -28,6 +28,7 @@ struct CharPattern* findCharPattern(unsigned char toFind) {
 
 void callNext() {
     struct CharPattern* nextCharPattern;
+
     if(*(caller.fp) == 0) {
         char nextChar = getNextChar(&caller);
         nextChar = toUpper(nextChar);
@@ -37,9 +38,16 @@ void callNext() {
         }
         nextCharPattern = findCharPattern(nextChar);
         caller.fp = nextCharPattern->fp;
+    } else 
+    if (caller.signalOutput) {
+        intraCharacterSpace();
+        caller.signalOutput = false;
+        return;
+
     }
 
     (*caller.fp)();
+    caller.signalOutput = true;
     caller.fp++;
 
 }
@@ -48,6 +56,7 @@ void initializeCaller() {
     caller.idx = 0;
     caller.fp = emptyPattern;
     caller.next = callNext;
+    caller.signalOutput  = false;
 }
 
 static inline char toUpper(char c) {
