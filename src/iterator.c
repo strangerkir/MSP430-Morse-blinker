@@ -38,8 +38,7 @@ void callNext() {
         }
         nextCharPattern = findCharPattern(nextChar);
         caller.fp = nextCharPattern->fp;
-    } else 
-    if (caller.signalOutput) {
+    } else if (caller.signalOutput) {
         intraCharacterSpace();
         caller.signalOutput = false;
         return;
