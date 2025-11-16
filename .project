@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Morse blinker</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ti.ccstudio.core.ccsNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>iterator.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/include/iterator.h</locationURI>
+		</link>
+		<link>
+			<name>signals.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/include/signals.h</locationURI>
+		</link>
+		<link>
+			<name>timer.h</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/include/timer.h</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

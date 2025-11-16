@@ -23,8 +23,8 @@ Release/
 *.lst
 
 # CCS project settings
-.cproject
-.project
+cproject
+project
 .settings/
 .metadata/
 
