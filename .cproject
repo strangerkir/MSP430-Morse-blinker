@@ -94,17 +94,6 @@
                             </option>
                         </tool>
                     </fileInfo>
-                    <fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.1496230395.src/timer.c" name="timer.c" rcbsApplicability="disable" resourcePath="src/timer.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.307080372.1969682076">
-                        <tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.307080372.1969682076" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.307080372">
-                            <option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.INCLUDE_PATH.583034969" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.INCLUDE_PATH" valueType="includePath">
-                                <listOptionValue value="${CCS_BASE_ROOT}/msp430/include"/>
-                                <listOptionValue value="${PROJECT_ROOT}"/>
-                                <listOptionValue value="${PROJECT_ROOT}/driverlib/MSP430F5xx_6xx"/>
-                                <listOptionValue value="${CG_TOOL_ROOT}/include"/>
-                                <listOptionValue value="${PROJECT_ROOT}/include"/>
-                            </option>
-                        </tool>
-                    </fileInfo>
                     <fileInfo id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.1496230395.src/main.c" name="main.c" rcbsApplicability="disable" resourcePath="src/main.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.307080372.37675359">
                         <tool id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.307080372.37675359" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.exe.compilerDebug.307080372">
                             <option id="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.INCLUDE_PATH.325317252" superClass="com.ti.ccstudio.buildDefinitions.MSP430_21.6.compilerID.INCLUDE_PATH" valueType="includePath">

@@ -8,7 +8,6 @@
 
 #include "driverlib.h"
 #include "signals.h"
-#include "timer.h"
 #include "hal.h"
 
 
