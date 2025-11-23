@@ -28,10 +28,5 @@
 			<type>1</type>
 			<locationURI>PROJECT_LOC/include/signals.h</locationURI>
 		</link>
-		<link>
-			<name>timer.h</name>
-			<type>1</type>
-			<locationURI>PROJECT_LOC/include/timer.h</locationURI>
-		</link>
 	</linkedResources>
 </projectDescription>
