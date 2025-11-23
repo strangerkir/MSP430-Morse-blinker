@@ -3,6 +3,8 @@
 
 //Input clock frequency.
 #define ALCLK_FREQUENCY 32768UL
+
+typedef void(*isrCallback)(void);
 /**
  * Timer configuration.
 */

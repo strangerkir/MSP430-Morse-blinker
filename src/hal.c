@@ -7,6 +7,8 @@
  */
 #define TIMER_PERIOD_UNIT (ALCLK_FREQUENCY * 0.2)
 
+static isrCallback callback;
+
 void ledOn() {
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
 };
@@ -18,7 +20,6 @@ void ledOff() {
 void waitUnits(unsigned short units) {
     setUpTimer(units * TIMER_PERIOD_UNIT);
 }
-
 
 void init() {
     WDT_A_hold(WDT_A_BASE);
@@ -48,5 +49,5 @@ void setUpTimer(unsigned short timerPeriod) {
 __interrupt void myISR_TA0_Other(void) {
     GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
     Timer_A_stop(TIMER_A0_BASE);
-    caller.next();
+    callback();
 }
