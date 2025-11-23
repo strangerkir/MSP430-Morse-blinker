@@ -14,6 +14,8 @@ int test_toUpper(void) {
     if(toUpper('Z') != 'Z') {
         return 1;
     }
+
+    return 0;
 }
 
 int main(void) {
@@ -21,6 +23,7 @@ int main(void) {
     int failed = 0;
 
     failed += test_toUpper();
+    executed = 1;
 
 
     printf("Total tests executed:%d\n", executed);
