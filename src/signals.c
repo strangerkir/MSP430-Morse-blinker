@@ -5,8 +5,6 @@
  * and spaces (used inside character, between characters, and between words).
  *
  */
-
-#include "driverlib.h"
 #include "signals.h"
 #include "hal.h"
 

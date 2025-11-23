@@ -37,7 +37,7 @@
 //!
 //******************************************************************************
 
-#include "driverlib.h"
+#include <driverlib.h>
 #include "iterator.h"
 #include "signals.h"
 #include "hal.h"
