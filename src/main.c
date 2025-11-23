@@ -45,6 +45,8 @@
 void main (void)
 {
     initializeCaller();
+    setIsrCallback(caller.next);
+    init();
     caller.next();
     while (1) {
         __no_operation();

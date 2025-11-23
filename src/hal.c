@@ -9,6 +9,10 @@
 
 static isrCallback callback;
 
+void setIsrCallback(isrCallback cb) {
+    callback = cb;
+}
+
 void ledOn() {
     GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
 };

@@ -18,4 +18,6 @@ void waitUnits(short unsigned units);
 
 void init();
 
+void setIsrCallback(isrCallback);
+
 #endif
