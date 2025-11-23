@@ -58,7 +58,7 @@ void initializeCaller() {
     caller.signalOutput  = false;
 }
 
-static inline char toUpper(char c) {
+char toUpper(char c) {
     if (c >= 'a' && c <='z') {
         return c - ('a' - 'A');
     }

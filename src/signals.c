@@ -9,42 +9,36 @@
 #include "driverlib.h"
 #include "signals.h"
 #include "timer.h"
-
-/**
- * A time unit used to get different intervals.
- * ~200ms
- */
-#define TIMER_PERIOD_UNIT (ALCLK_FREQUENCY * 0.2)
+#include "hal.h"
 
 
 
 void dah(void) {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_PERIOD_UNIT * 3);
+    ledOn();
+    waitUnits(3);
 };
 
 
 void dit(void) {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_PERIOD_UNIT);
+    ledOff();
+    waitUnits(1);
 }
 
 
 void intraCharacterSpace(void) {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_PERIOD_UNIT);
+    ledOff();
+    waitUnits(1);
 }
 
 
 void characterSpace(void) {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
-        setUpTimer(TIMER_PERIOD_UNIT * 3);
+    ledOn();
+    waitUnits(3);
 
 }
 
 
 void wordSpace(void) {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
-    setUpTimer(TIMER_PERIOD_UNIT * 7);
-
+    ledOff();
+    waitUnits(7);
 }

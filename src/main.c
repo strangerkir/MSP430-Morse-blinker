@@ -40,14 +40,11 @@
 #include "driverlib.h"
 #include "iterator.h"
 #include "signals.h"
+#include "hal.h"
 
 void main (void)
 {
-
-    WDT_A_hold(WDT_A_BASE);
-    GPIO_setAsOutputPin(GPIO_PORT_P1, GPIO_PIN0);
     initializeCaller();
-    _enable_interrupt();
     caller.next();
     while (1) {
         __no_operation();
