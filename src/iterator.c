@@ -7,7 +7,7 @@
 
 struct Caller caller;
 
-static char* input;
+static char* input = "";
 
 struct CharPattern* findCharPattern(unsigned char toFind) {
     int i = 0;
