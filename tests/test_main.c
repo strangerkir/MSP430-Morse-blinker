@@ -2,20 +2,47 @@
 #include "char-signals_map.h"
 #include "iterator.h"
 
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
 int test_toUpper(void) {
+    short failed = 0;
     if(toUpper('c') != 'C') {
-        return 1;
+        failed ++;
     }
 
     if(toUpper('a') != 'A') {
-        return 1;
+        failed++;
     }
 
     if(toUpper('Z') != 'Z') {
-        return 1;
+        failed++;
     }
 
-    return 0;
+    if(toUpper(',') != ','){
+        failed++;
+    }
+
+    if(toUpper(' ') != ' ') {
+        failed++;
+    }
+
+    return failed;
+}
+
+int test_getNextChar(){
+    short failed = 0;
+    //Just check it returns next letter every time.
+    if(getNextChar() != 'S') {
+        failed++;
+    }
+
+    if(getNextChar() != 'o') {
+        failed++;
+    }
+
+    return failed;
 }
 
 int main(void) {
@@ -23,11 +50,13 @@ int main(void) {
     int failed = 0;
 
     failed += test_toUpper();
+    failed += test_getNextChar();
     executed = 1;
 
 
     printf("Total tests executed:%d\n", executed);
-    printf("Failed tests:%d\n", failed);
+    const char* color = failed > 0 ? ANSI_COLOR_RED : ANSI_COLOR_GREEN;
+    printf( "%1$sFailed tests: %2$d%3$s\n", color, failed, ANSI_COLOR_RESET);
 
     return failed != 0;
 }
