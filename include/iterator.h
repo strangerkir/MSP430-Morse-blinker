@@ -19,6 +19,8 @@ char getNextChar();
 
 char toUpper(char c);
 
+void setInput(char* text);
+
 extern struct Caller caller;
 
 #endif

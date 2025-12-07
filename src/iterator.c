@@ -7,6 +7,8 @@
 
 struct Caller caller;
 
+static char* input;
+
 struct CharPattern* findCharPattern(unsigned char toFind) {
     int i = 0;
     do {
@@ -20,10 +22,13 @@ struct CharPattern* findCharPattern(unsigned char toFind) {
     return &charMap[--i];
 }
 
+void setInput(char* text) {
+    input = text;
+}
+
 char getNextChar() {
-    char* text = "Some longer text for a good testing of a Morse Blinker.";
     static int i = 0;
-    return text[i++];
+    return input[i++];
 }
 
 void callNext() {
