@@ -52,3 +52,7 @@ project
 # Optional: ignore backup or swap files
 *~
 *.swp
+
+# Test build
+
+/morse_tests
