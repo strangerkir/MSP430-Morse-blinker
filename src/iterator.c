@@ -7,7 +7,7 @@
 
 struct Caller caller;
 
-char getNextChar(struct Caller *caller) {
+char getNextChar() {
     char* text = "Some longer text for a good testing of a Morse Blinker.";
     static int i = 0;
     return text[i++];
@@ -30,7 +30,7 @@ void callNext() {
     struct CharPattern* nextCharPattern;
 
     if(*(caller.fp) == 0) {
-        char nextChar = getNextChar(&caller);
+        char nextChar = getNextChar();
         nextChar = toUpper(nextChar);
         if(nextChar == '\0') {
             //End of the text.
