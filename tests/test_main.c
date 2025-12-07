@@ -49,6 +49,9 @@ int main(void) {
     int executed = 0;
     int failed = 0;
 
+
+    setInput("Some longer text for a good testing of a Morse Blinker."); //todo: replace with reading from a file
+
     failed += test_toUpper();
     failed += test_getNextChar();
     executed = 1;
