@@ -15,6 +15,8 @@ struct Caller {
 
 void initializeCaller();
 
+char getNextChar();
+
 char toUpper(char c);
 
 extern struct Caller caller;
