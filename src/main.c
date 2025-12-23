@@ -30,21 +30,20 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * --/COPYRIGHT--*/
 
-
 //******************************************************************************
 //!
 //!   Converts text into Morse signals outputted by led.
 //!
 //******************************************************************************
 
-#include <driverlib.h>
+#include "hal.h"
 #include "iterator.h"
 #include "signals.h"
-#include "hal.h"
+#include <driverlib.h>
 
-void main (void)
-{
-    setInput("Some longer text for a good testing of a Morse Blinker."); //todo: replace with reading from a file
+void main(void) {
+    setInput("Some longer text for a good testing of a Morse Blinker."); // todo: replace with
+                                                                         // reading from a file
     initializeCaller();
     setIsrCallback(caller.next);
     init();

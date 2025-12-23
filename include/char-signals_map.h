@@ -5,9 +5,8 @@
 
 struct CharPattern {
     char ch;
-    const FuncPtr* fp; 
+    const FuncPtr* fp;
 };
-
 
 extern struct CharPattern charMap[];
 

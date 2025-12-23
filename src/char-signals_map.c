@@ -2,9 +2,9 @@
  * Map character - set of Morse signals.
  */
 
+#include "char-signals_map.h"
 #include "iterator.h"
 #include "signals.h"
-#include "char-signals_map.h"
 
 const FuncPtr sPattern[] = {dit, dit, dit, 0};
 const FuncPtr aPattern[] = {dit, dah, 0};
@@ -52,53 +52,19 @@ const FuncPtr exclamationPattern[] = {dah, dit, dah, dit, dah, dah, 0};
 const FuncPtr spacePattern[] = {wordSpace, 0};
 const FuncPtr emptyPattern[] = {0};
 
-
-
 struct CharPattern charMap[] = {
-    {'A', aPattern},
-    {'B', bPattern},
-    {'C', cPattern},
-    {'D', dPattern},
-    {'E', ePattern},
-    {'F', fPattern},
-    {'G', gPattern},
-    {'H', hPattern},
-    {'I', iPattern},
-    {'J', jPattern},
-    {'K', kPattern},
-    {'L', lPattern},
-    {'M', mPattern},
-    {'N', nPattern},
-    {'O', oPattern},
-    {'P', pPattern},
-    {'Q', qPattern},
-    {'R', rPattern},
-    {'S', sPattern},
-    {'T', tPattern},
-    {'U', uPattern},
-    {'V', vPattern},
-    {'W', wPattern},
-    {'X', xPattern},
-    {'Y', yPattern},
-    {'Z', zPattern},
-    {' ', spacePattern},
+    {'A', aPattern},           {'B', bPattern},      {'C', cPattern},     {'D', dPattern},
+    {'E', ePattern},           {'F', fPattern},      {'G', gPattern},     {'H', hPattern},
+    {'I', iPattern},           {'J', jPattern},      {'K', kPattern},     {'L', lPattern},
+    {'M', mPattern},           {'N', nPattern},      {'O', oPattern},     {'P', pPattern},
+    {'Q', qPattern},           {'R', rPattern},      {'S', sPattern},     {'T', tPattern},
+    {'U', uPattern},           {'V', vPattern},      {'W', wPattern},     {'X', xPattern},
+    {'Y', yPattern},           {'Z', zPattern},      {' ', spacePattern},
 
-    {'1', onePattern},
-    {'2', twoPattern},
-    {'3', threePattern},
-    {'4', fourPattern},
-    {'5', fivePattern},
-    {'6', sixPattern},
-    {'7', sevenPattern},
-    {'8', eightPattern},
-    {'9', ninePattern},
-    {'0', zeroPattern},
+    {'1', onePattern},         {'2', twoPattern},    {'3', threePattern}, {'4', fourPattern},
+    {'5', fivePattern},        {'6', sixPattern},    {'7', sevenPattern}, {'8', eightPattern},
+    {'9', ninePattern},        {'0', zeroPattern},
 
-    {'.', dotPattern},
-    {',', commaPattern},
-    {'-', dashPattern},
-    {'?', questionPattern},
-    {'!', exclamationPattern},
-    {'\0', emptyPattern},
+    {'.', dotPattern},         {',', commaPattern},  {'-', dashPattern},  {'?', questionPattern},
+    {'!', exclamationPattern}, {'\0', emptyPattern},
 };
-

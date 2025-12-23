@@ -9,21 +9,13 @@
 
 static isrCallback callback;
 
-void setIsrCallback(isrCallback cb) {
-    callback = cb;
-}
+void setIsrCallback(isrCallback cb) { callback = cb; }
 
-void ledOn() {
-    GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0);
-};
+void ledOn() { GPIO_setOutputHighOnPin(GPIO_PORT_P1, GPIO_PIN0); };
 
-void ledOff() {
-    GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0);
-};
+void ledOff() { GPIO_setOutputLowOnPin(GPIO_PORT_P1, GPIO_PIN0); };
 
-void waitUnits(unsigned short units) {
-    setUpTimer(units * TIMER_PERIOD_UNIT);
-}
+void waitUnits(unsigned short units) { setUpTimer(units * TIMER_PERIOD_UNIT); }
 
 void init() {
     WDT_A_hold(WDT_A_BASE);
@@ -43,8 +35,7 @@ void setUpTimer(unsigned short timerPeriod) {
 
     Timer_A_initUpMode(TIMER_A0_BASE, &initParam);
 
-    Timer_A_clearCaptureCompareInterrupt(TIMER_A0_BASE,
-    TIMER_A_CAPTURECOMPARE_REGISTER_0);
+    Timer_A_clearCaptureCompareInterrupt(TIMER_A0_BASE, TIMER_A_CAPTURECOMPARE_REGISTER_0);
 
     Timer_A_startCounter(TIMER_A0_BASE, TIMER_A_UP_MODE);
 }
