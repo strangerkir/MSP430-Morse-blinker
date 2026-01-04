@@ -24,12 +24,12 @@ struct CharPattern* findCharPattern(unsigned char toFind) {
 
 void setInput(char* text) { input = text; }
 
-char getNextChar() {
+char getNextChar(void) {
     static int i = 0;
     return input[i++];
 }
 
-void callNext() {
+void callNext(void) {
     struct CharPattern* nextCharPattern;
 
     if (*(caller.fp) == 0) {
@@ -52,7 +52,7 @@ void callNext() {
     caller.fp++;
 }
 
-void initializeCaller() {
+void initializeCaller(void) {
     caller.idx = 0;
     caller.fp = emptyPattern;
     caller.next = callNext;

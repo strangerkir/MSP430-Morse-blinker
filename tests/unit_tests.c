@@ -3,9 +3,12 @@
  
 
  int test_toUpper(void);
- int test_getNextChar();
+ int test_getNextChar(void);
 
- int runUnitTests() {
+ 
+ int runUnitTests(void);
+
+ int runUnitTests(void) {
     return test_toUpper() + 
         test_getNextChar();
  }
@@ -35,7 +38,7 @@
     return failed;
 }
 
-int test_getNextChar() {
+int test_getNextChar(void) {
     short failed = 0;
     // Just check it returns next letter every time.
     if (getNextChar() != 'S') {

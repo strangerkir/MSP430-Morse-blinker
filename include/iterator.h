@@ -13,9 +13,13 @@ struct Caller {
                        // finished, or in-between signals pause)
 };
 
-void initializeCaller();
+struct CharPattern* findCharPattern(unsigned char toFind);
 
-char getNextChar();
+void callNext(void);
+
+void initializeCaller(void);
+
+char getNextChar(void);
 
 char toUpper(char c);
 

@@ -10,13 +10,13 @@ typedef void (*isrCallback)(void);
  */
 void setUpTimer(unsigned short timerPeriod);
 
-void ledOn();
+void ledOn(void);
 
-void ledOff();
+void ledOff(void);
 
 void waitUnits(short unsigned units);
 
-void init();
+void init(void);
 
 void setIsrCallback(isrCallback);
 

@@ -5,7 +5,7 @@
 #define ANSI_COLOR_GREEN "\x1b[32m"
 #define ANSI_COLOR_RESET "\x1b[0m"
 
-int runUnitTests();
+int runUnitTests(void);
 
 int main(void) {
     //int executed = 0;
