@@ -29,7 +29,7 @@ char getNextChar(void) {
     return input[i++];
 }
 
-void callNext(void) {
+bool callNext(void) {
     struct CharPattern* nextCharPattern;
 
     if (*(caller.fp) == 0) {
@@ -37,19 +37,20 @@ void callNext(void) {
         nextChar = toUpper(nextChar);
         if (nextChar == '\0') {
             // End of the text.
-            return;
+            return false;
         }
         nextCharPattern = findCharPattern(nextChar);
         caller.fp = nextCharPattern->fp;
     } else if (caller.signalOutput) {
         intraCharacterSpace();
         caller.signalOutput = false;
-        return;
+        return true;
     }
 
     (*caller.fp)();
     caller.signalOutput = true;
     caller.fp++;
+    return true;
 }
 
 void initializeCaller(void) {

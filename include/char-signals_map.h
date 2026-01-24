@@ -5,11 +5,11 @@
 
 struct CharPattern {
     char ch;
-    const FuncPtr* fp;
+    const SignalFn* fp;
 };
 
 extern struct CharPattern charMap[];
 
-extern const FuncPtr emptyPattern[];
+extern const SignalFn emptyPattern[];
 
 #endif

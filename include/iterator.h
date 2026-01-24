@@ -3,11 +3,12 @@
 
 #include <stdbool.h>
 
-typedef void (*FuncPtr)(void);
+typedef bool (*FuncPtr)(void);
+typedef void (*SignalFn)(void);
 
 struct Caller {
     unsigned short idx;
-    const FuncPtr* fp;
+    const SignalFn* fp;
     FuncPtr next;
     bool signalOutput; // true for led on (signal output), false for led off(not started, or
                        // finished, or in-between signals pause)
@@ -15,7 +16,7 @@ struct Caller {
 
 struct CharPattern* findCharPattern(unsigned char toFind);
 
-void callNext(void);
+bool callNext(void);
 
 void initializeCaller(void);
 
