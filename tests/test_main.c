@@ -6,19 +6,25 @@
 #define ANSI_COLOR_RESET "\x1b[0m"
 
 int runUnitTests(void);
+int runIntegrationTests(void);
+void printResults(int failedTestsNumber, char* testsType);
 
 int main(void) {
-    //int executed = 0;
-    int failed = 0;
 
     setInput("Some longer text for a good testing of a Morse Blinker."); // todo: replace with
                                                                          // reading from a file
+    int unitFailed = runUnitTests();
+    printResults(unitFailed, "unit");
 
-    failed = runUnitTests();
+    int integrationFailed = runIntegrationTests();
+    printResults(integrationFailed, "integration");
+    
 
-    //printf("Total tests executed:%d\n", executed);
-    const char* color = failed > 0 ? ANSI_COLOR_RED : ANSI_COLOR_GREEN;
-    printf("%1$sFailed tests: %2$d%3$s\n", color, failed, ANSI_COLOR_RESET);
+    return unitFailed != 0;
+}
 
-    return failed != 0;
+void printResults(int failedTestsNumber, char* testsType) {
+
+    const char* color = failedTestsNumber > 0 ? ANSI_COLOR_RED : ANSI_COLOR_GREEN;
+    printf("%1$sFailed %4$s tests: %2$d%3$s\n", color, failedTestsNumber, ANSI_COLOR_RESET, testsType);
 }
