@@ -5,7 +5,7 @@ TEST_CFLAGS := $(CFLAGS) -Itests
 SRC := $(wildcard src/*.c)
 TEST_SRC := $(filter-out src/hal.c src/main.c, $(SRC)) $(wildcard tests/*.c)
 TEST_BIN := morse_tests/morse_tests
-.PHONY: tests clean debug
+.PHONY: tests clean debug format
 tests:
 	mkdir -p morse_tests 
 	$(CC) $(TEST_CFLAGS) $(TEST_SRC) -o $(TEST_BIN)
