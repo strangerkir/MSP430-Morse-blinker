@@ -1,6 +1,6 @@
 ## This makefile is only intended for tests. The actual build is done via IDE without using this makefile.
 CC := gcc
-CFLAGS := -std=c11 -Wall -Wextra -Werror -Wstrict-prototypes -Wmissing-prototypes -Iinclude -g
+CFLAGS := -std=c11 -Wall -Wextra -Werror -Wstrict-prototypes -Wmissing-prototypes -Iinclude -g -O0
 TEST_CFLAGS := $(CFLAGS) -Itests
 SRC := $(wildcard src/*.c)
 TEST_SRC := $(filter-out src/hal.c src/main.c, $(SRC)) $(wildcard tests/*.c)
