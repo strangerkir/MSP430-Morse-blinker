@@ -1,19 +1,14 @@
- #include "char-signals_map.h"
- #include "iterator.h"
- 
+#include "char-signals_map.h"
+#include "iterator.h"
 
- int test_toUpper(void);
- int test_getNextChar(void);
+int test_toUpper(void);
+int test_getNextChar(void);
 
- 
- int runUnitTests(void);
+int runUnitTests(void);
 
- int runUnitTests(void) {
-    return test_toUpper() + 
-        test_getNextChar();
- }
+int runUnitTests(void) { return test_toUpper() + test_getNextChar(); }
 
- int test_toUpper(void) {
+int test_toUpper(void) {
     short failed = 0;
     if (toUpper('c') != 'C') {
         failed++;

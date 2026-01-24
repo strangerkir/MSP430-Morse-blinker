@@ -18,7 +18,6 @@ int main(void) {
 
     int integrationFailed = runIntegrationTests();
     printResults(integrationFailed, "integration");
-    
 
     return unitFailed != 0;
 }
@@ -26,5 +25,6 @@ int main(void) {
 void printResults(int failedTestsNumber, char* testsType) {
 
     const char* color = failedTestsNumber > 0 ? ANSI_COLOR_RED : ANSI_COLOR_GREEN;
-    printf("%1$sFailed %4$s tests: %2$d%3$s\n", color, failedTestsNumber, ANSI_COLOR_RESET, testsType);
+    printf("%1$sFailed %4$s tests: %2$d%3$s\n", color, failedTestsNumber, ANSI_COLOR_RESET,
+           testsType);
 }
