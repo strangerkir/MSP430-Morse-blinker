@@ -14,3 +14,5 @@ debug: tests
 	gdb $(TEST_BIN)
 clean:
 	rm -f $(TEST_BIN)
+format:
+	clang-format -i src/*.c include/*.h tests/*.c
