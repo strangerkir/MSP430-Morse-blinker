@@ -2,10 +2,10 @@
 
 void setIsrCallback(isrCallback) {}
 
-void ledOn() {}
+void ledOn(void) {}
 
-void ledOff() {}
+void ledOff(void) {}
 
-void init() {}
+void init(void) {}
 
 void waitUnits(unsigned short) {}
