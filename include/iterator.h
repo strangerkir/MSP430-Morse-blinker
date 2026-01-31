@@ -10,8 +10,9 @@ struct Caller {
     unsigned short idx;
     const SignalFn* fp;
     FuncPtr next;
-    bool signalOutput; // true for led on (signal output), false for led off(not started, or
-                       // finished, or in-between signals pause)
+    bool signalOutput;         // true for led on (signal output), false for led off(not started, or
+                               // finished, or in-between signals pause)
+    bool characterSpaceOutput; // whether a space after a character was output.
 };
 
 struct CharPattern* findCharPattern(unsigned char toFind);

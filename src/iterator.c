@@ -33,6 +33,12 @@ bool callNext(void) {
     struct CharPattern* nextCharPattern;
 
     if (*(caller.fp) == 0) {
+        if (!caller.characterSpaceOutput && caller.fp != emptyPattern) { //Emitted a character, character space is needed
+            characterSpace();
+            caller.characterSpaceOutput = true;
+            return true;
+        }
+        caller.characterSpaceOutput = false; // Reset the flag for the next character.
         char nextChar = getNextChar();
         nextChar = toUpper(nextChar);
         if (nextChar == '\0') {
@@ -58,6 +64,7 @@ void initializeCaller(void) {
     caller.fp = emptyPattern;
     caller.next = callNext;
     caller.signalOutput = false;
+    caller.characterSpaceOutput = false;
 }
 
 char toUpper(char c) {
