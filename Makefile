@@ -15,4 +15,4 @@ debug: tests
 clean:
 	rm -f $(TEST_BIN)
 format:
-	clang-format -i src/*.c include/*.h tests/*.c
+	clang-format -i src/*.c include/*.h tests/*.c tests/*.h
