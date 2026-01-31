@@ -14,7 +14,7 @@ void dah(void) {
 };
 
 void dit(void) {
-    ledOff();
+    ledOn();
     waitUnits(1);
 }
 
