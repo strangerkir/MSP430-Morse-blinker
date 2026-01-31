@@ -24,7 +24,7 @@ void intraCharacterSpace(void) {
 }
 
 void characterSpace(void) {
-    ledOn();
+    ledOff();
     waitUnits(3);
 }
 
