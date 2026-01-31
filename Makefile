@@ -10,11 +10,15 @@ TEST_BIN := morse_tests/morse_tests
 compile_tests:
 	mkdir -p morse_tests 
 	$(CC) $(TEST_CFLAGS) $(TEST_SRC) -o $(TEST_BIN)
+
 tests: compile_tests
 	./$(TEST_BIN)
+
 debug: tests
 	gdb $(TEST_BIN)
+
 clean:
 	rm -f $(TEST_BIN)
+
 format:
 	clang-format -i src/*.c include/*.h tests/*.c tests/*.h
