@@ -4,10 +4,11 @@
 #include "iterator.h"
 #include "char-signals_map.h"
 #include "signals.h"
+#include "string.h"
 
 struct Caller caller;
 
-static char* input = "";
+static char input[1024];
 
 struct CharPattern* findCharPattern(unsigned char toFind) {
     int i = 0;
@@ -22,7 +23,9 @@ struct CharPattern* findCharPattern(unsigned char toFind) {
     return &charMap[--i];
 }
 
-void setInput(char* text) { input = text; }
+void setInput(char* text) { 
+    strcpy(input, text);
+}
 
 char getNextChar(void) {
     static int i = 0;
@@ -33,7 +36,8 @@ bool callNext(void) {
     struct CharPattern* nextCharPattern;
 
     if (*(caller.fp) == 0) {
-        if (!caller.characterSpaceOutput && caller.fp != emptyPattern) { //Emitted a character, character space is needed
+        if (!caller.characterSpaceOutput &&
+            caller.fp != emptyPattern) { // Emitted a character, character space is needed
             characterSpace();
             caller.characterSpaceOutput = true;
             return true;
