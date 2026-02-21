@@ -27,9 +27,11 @@ void setInput(char* text) {
     strcpy(input, text);
 }
 
-char getNextChar(void) {
-    static int i = 0;
-    return input[i++];
+char getNextChar(struct Caller *caller) {
+    char nextChar = input[caller->charIdx];
+    caller->charIdx++;
+
+    return nextChar;
 }
 
 bool callNext(void) {
@@ -43,7 +45,7 @@ bool callNext(void) {
             return true;
         }
         caller.characterSpaceOutput = false; // Reset the flag for the next character.
-        char nextChar = getNextChar();
+        char nextChar = getNextChar(&caller);
         nextChar = toUpper(nextChar);
         if (nextChar == '\0') {
             // End of the text.
@@ -69,6 +71,7 @@ void initializeCaller(void) {
     caller.next = callNext;
     caller.signalOutput = false;
     caller.characterSpaceOutput = false;
+    caller.charIdx = 0;
 }
 
 char toUpper(char c) {

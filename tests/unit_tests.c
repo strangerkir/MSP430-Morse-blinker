@@ -36,11 +36,11 @@ int test_toUpper(void) {
 int test_getNextChar(void) {
     short failed = 0;
     // Just check it returns next letter every time.
-    if (getNextChar() != 'S') {
+    if (getNextChar(&caller) != 'S') {
         failed++;
     }
 
-    if (getNextChar() != 'o') {
+    if (getNextChar(&caller) != 'o') {
         failed++;
     }
 
