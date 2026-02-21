@@ -11,8 +11,6 @@ void printResults(int failedTestsNumber, char* testsType);
 
 int main(void) {
 
-    setInput("Some longer text for a good testing of a Morse Blinker."); // todo: replace with
-                                                                         // reading from a file
     int unitFailed = runUnitTests();
     printResults(unitFailed, "unit");
 

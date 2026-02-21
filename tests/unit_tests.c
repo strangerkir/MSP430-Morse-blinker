@@ -9,6 +9,7 @@ int runUnitTests(void);
 int runUnitTests(void) { return test_toUpper() + test_getNextChar(); }
 
 int test_toUpper(void) {
+    initializeCaller();
     short failed = 0;
     if (toUpper('c') != 'C') {
         failed++;
@@ -34,11 +35,29 @@ int test_toUpper(void) {
 }
 
 int test_getNextChar(void) {
+    initializeCaller();
+    setInput("Hello");
+    
     short failed = 0;
     // Just check it returns next letter every time.
-    if (getNextChar(&caller) != 'S') {
+    if (getNextChar(&caller) != 'H') {
         failed++;
     }
+
+    if (getNextChar(&caller) != 'e') {
+        failed++;
+    }
+
+
+    if (getNextChar(&caller) != 'l') {
+        failed++;
+    }
+    
+
+    if (getNextChar(&caller) != 'l') {
+        failed++;
+    }
+
 
     if (getNextChar(&caller) != 'o') {
         failed++;
