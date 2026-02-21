@@ -1,11 +1,24 @@
+#include <string.h>
 #include "../include/iterator.h"
+#include "hal_mock.h"
+
+#include <stdio.h>
+
 
 int runIntegrationTests(void);
 
 int runIntegrationTests(void) {
-    setInput("Test 123");
     initializeCaller();
-    caller.next();
+    setInput("SOS");
+    outputBuffer[0] = '\0';
+    
+ 
+    while(caller.next()){
+        //nothing to do here
+    }
 
-    return 0;
+    int result = strcmp(outputBuffer, "+/+/+///+++/+++/+++///+/+/+///");
+
+
+    return result == 0 ? 0 : 1;
 }
