@@ -14,7 +14,7 @@ compile_tests:
 tests: compile_tests
 	./$(TEST_BIN)
 
-debug: tests
+debug: compile_tests
 	gdb $(TEST_BIN)
 
 clean:
