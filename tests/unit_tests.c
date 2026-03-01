@@ -37,7 +37,7 @@ int test_toUpper(void) {
 int test_getNextChar(void) {
     initializeCaller();
     setInput("Hello");
-    
+
     short failed = 0;
     // Just check it returns next letter every time.
     if (getNextChar(&caller) != 'H') {
@@ -48,16 +48,13 @@ int test_getNextChar(void) {
         failed++;
     }
 
-
-    if (getNextChar(&caller) != 'l') {
-        failed++;
-    }
-    
-
     if (getNextChar(&caller) != 'l') {
         failed++;
     }
 
+    if (getNextChar(&caller) != 'l') {
+        failed++;
+    }
 
     if (getNextChar(&caller) != 'o') {
         failed++;

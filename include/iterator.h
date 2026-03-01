@@ -25,11 +25,10 @@ bool callNext(void);
 
 void initializeCaller(void);
 
-char getNextChar(struct Caller *caller);
+char getNextChar(struct Caller* caller);
 
 char toUpper(char c);
 
 void setInput(char* text);
-
 
 #endif

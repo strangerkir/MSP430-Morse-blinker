@@ -7,7 +7,6 @@
  */
 #define TIMER_PERIOD_UNIT (ALCLK_FREQUENCY * 0.2)
 
-
 static isrCallback callback;
 
 void setIsrCallback(isrCallback cb) { callback = cb; }

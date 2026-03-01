@@ -23,11 +23,9 @@ struct CharPattern* findCharPattern(unsigned char toFind) {
     return &charMap[--i];
 }
 
-void setInput(char* text) { 
-    strcpy(input, text);
-}
+void setInput(char* text) { strcpy(input, text); }
 
-char getNextChar(struct Caller *caller) {
+char getNextChar(struct Caller* caller) {
     char nextChar = input[caller->charIdx];
     caller->charIdx++;
 
