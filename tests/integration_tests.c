@@ -2,8 +2,6 @@
 #include "../include/iterator.h"
 #include "hal_mock.h"
 
-#include <stdio.h>
-
 
 int runIntegrationTests(void);
 
