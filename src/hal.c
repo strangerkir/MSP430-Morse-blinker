@@ -7,6 +7,14 @@
  */
 #define TIMER_PERIOD_UNIT (ALCLK_FREQUENCY * 0.2)
 
+
+// Input clock frequency.
+#define ALCLK_FREQUENCY 32768UL
+
+#define OUTPUT_PORT GPIO_PORT_P6
+#define OUTPUT_PIN GPIO_PIN1
+
+
 static isrCallback callback;
 
 void setIsrCallback(isrCallback cb) { callback = cb; }
