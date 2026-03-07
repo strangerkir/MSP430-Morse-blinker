@@ -50,6 +50,7 @@ const SignalFn dashPattern[] = {dah, dit, dit, dit, dit, dah, 0};
 const SignalFn questionPattern[] = {dit, dit, dah, dah, dit, dit, 0};
 const SignalFn exclamationPattern[] = {dah, dit, dah, dit, dah, dah, 0};
 const SignalFn spacePattern[] = {wordSpace, 0};
+const SignalFn apostrophePattern[] = {dit, dah, dah, dah, dah, dit, 0};
 const SignalFn emptyPattern[] = {0};
 
 struct CharPattern charMap[] = {
