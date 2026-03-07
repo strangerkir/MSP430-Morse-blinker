@@ -50,7 +50,6 @@ void setUpTimer(unsigned short timerPeriod) {
 
 #pragma vector = TIMER0_A0_VECTOR
 __interrupt void myISR_TA0_Other(void) {
-    GPIO_setOutputLowOnPin(OUTPUT_PORT, OUTPUT_PIN);
     Timer_A_stop(TIMER_A0_BASE);
     callback();
 }
