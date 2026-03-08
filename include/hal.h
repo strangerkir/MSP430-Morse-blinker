@@ -1,7 +1,8 @@
 #ifndef HAL_H
 #define HAL_H
 
-typedef void (*isrCallback)(void);
+#include "iterator.h"
+
 /**
  * Timer configuration.
  */
@@ -15,6 +16,6 @@ void waitUnits(short unsigned units);
 
 void init(void);
 
-void setIsrCallback(isrCallback);
+void setIsrCallback(FuncPtr cb);
 
 #endif

@@ -7,7 +7,7 @@ size_t outputBufferIdx = 0;
 
 bool ledIsOn = false;
 
-void setIsrCallback(isrCallback) {}
+void setIsrCallback(FuncPtr) {}
 
 void ledOn(void) { ledIsOn = true; }
 

@@ -15,9 +15,9 @@
 #define OUTPUT_PIN GPIO_PIN0
 
 
-static isrCallback callback;
+static FuncPtr callback;
 
-void setIsrCallback(isrCallback cb) { callback = cb; }
+void setIsrCallback(FuncPtr cb) { callback = cb; }
 
 void ledOn() { GPIO_setOutputHighOnPin(OUTPUT_PORT, OUTPUT_PIN); };
 
