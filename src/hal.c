@@ -11,8 +11,8 @@
 // Input clock frequency.
 #define ALCLK_FREQUENCY 32768UL
 
-#define OUTPUT_PORT GPIO_PORT_P6
-#define OUTPUT_PIN GPIO_PIN1
+#define OUTPUT_PORT GPIO_PORT_P1
+#define OUTPUT_PIN GPIO_PIN0
 
 
 static isrCallback callback;
