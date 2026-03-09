@@ -6,7 +6,9 @@
 /**
  * Timer configuration.
  */
-void setUpTimer(unsigned short timerPeriod);
+void setUpTimer();
+
+void restartTimer(unsigned short timerPeriod);
 
 void ledOn(void);
 
