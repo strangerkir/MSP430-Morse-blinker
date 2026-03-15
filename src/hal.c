@@ -25,6 +25,7 @@ void waitUnits(unsigned short units) { restartTimer(units * TIMER_PERIOD_UNIT); 
 
 void init() {
     WDT_A_hold(WDT_A_BASE);
+    ledOff(); //Make sure we are in the proper initial state
     GPIO_setAsOutputPin(OUTPUT_PORT, OUTPUT_PIN);
     _enable_interrupt();
     setUpTimer();
