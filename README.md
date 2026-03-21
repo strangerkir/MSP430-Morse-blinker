@@ -4,9 +4,12 @@ This is a simple Morse code blinker written in C for the MSP430 microcontroller.
 It blinks a LED on `P1.0` using Timer_A, representing dots, dashes, and spaces according to Morse timing.
 
 ## Features
+- Converts text in Morse Code by blinking a LED at `P1.0`.
+- Uses hardware timer interrupts for accurate Morse timing.
 
-- Reads text from the file located on flash memory (planned, not implemented yet);
-- Outputs the text in Morse Code by blinking a LED at `P1.0`.
+## Limitations
+- Input text is hardcoded in firmware
+- No persistent storage
 
 ## Requirements
 
@@ -19,6 +22,9 @@ It blinks a LED on `P1.0` using Timer_A, representing dots, dashes, and spaces a
 2. Import the project into your CCS.
 3. Connect your LaunchPad and run **Start Debugging** to flash and run the code.
 4. The LED on `P1.0` will blink Morse signals repeatedly.
+
+## Status
+This project is considered complete in its current scope.
 
 ## Notes
 
