@@ -42,8 +42,7 @@
 #include <driverlib.h>
 
 void main(void) {
-    setInput("Some longer text for a good testing of a Morse Blinker."); // todo: replace with
-                                                                         // reading from a file
+    setInput("Some longer text for a good testing of a Morse Blinker.");
     initializeCaller();
     setIsrCallback(caller.next);
     init();
