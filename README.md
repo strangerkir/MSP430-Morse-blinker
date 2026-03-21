@@ -1,11 +1,10 @@
 # Morse Blinker for MSP430
 
 This is a simple Morse code blinker written in C for the MSP430 microcontroller.  
-It blinks a LED on `P1.0` using Timer_A, representing dots, dashes, and spaces according to Morse timing.
+It blinks an LED on `P1.0` using Timer_A interrupts, representing dots, dashes, and spaces according to Morse code timing.
 
 ## Features
-- Converts text in Morse Code by blinking a LED at `P1.0`.
-- Uses hardware timer interrupts for accurate Morse timing.
+- Converts text to Morse code by blinking an LED on `P1.0`
 
 ## Limitations
 - Input text is hardcoded in firmware
@@ -33,7 +32,6 @@ This is an **educational project**, created to learn and practice embedded devel
 - Timer configuration
 - GPIO control
 - Interrupt handling
-- Interaction with filesystem
 - Basic system design
 
 Feel free to fork or modify it as a base for your own experiments.
